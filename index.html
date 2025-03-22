@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/output.css">
+    <link rel="stylesheet" href="src/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Tech Bazaar</title>
+    <style>
+
+    </style>
+</head>
+
+<body class="bg-gray-50 font-poppins">
+    <!-- Header Section -->
+    <header class="bg-white w-full fixed shadow-md top-0 left-0 z-50 animate__fadeInDown animate__animated">
+        <!-- Top Banner -->
+        <div class="bg-accent hidden lg:block ">
+            <div class="container mx-auto px-4 md:px-8 lg:px-14 py-2 flex justify-between items-center text-center">
+                <div class="flex items-center text-gray-800 animate-pulse gap-3">
+                    <div class="h-[35px] w-[35px]">
+                        <img src="src/assets/deal.png" alt="Deal Icon" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-lg font-semibold">New Deals & Discounts Available!</h4>
+                </div>
+                <div class="flex items-center gap-4 text-gray-700 text-sm md:text-base">
+                    <div class="flex items-center gap-2 hover:text-gray-900 transition">
+                        <i class="fas fa-phone text-lg"></i>
+                        <span>Call: +252 61XXXXXXX</span>
+                    </div>
+                    <div class="flex items-center gap-2 hover:text-gray-900 transition">
+                        <i class="fas fa-truck text-lg"></i>
+                        <span>Free Shipping!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar-->
+        <div class="bg-white">
+            <div class="container mx-auto px-4 md:px-8 lg:px-14 py-6 flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-2xl font-bold text-darkGray hidden md:block">
+                    <a href="#" class="transition duration-300">Tech<span class="text-primary">Bazaar</span></a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-primary hover:text-secondary focus:outline-none">
+                    <i class="fas fa-bars text-3xl"></i>
+                </button>
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-6 font-medium">
+                    <a href="#" class="links">Home</a>
+                    <a href="#" class="links">Shop</a>
+                    <a href="#" class="links">Deals</a>
+                    <a href="#" class="links">Contact</a>
+                </nav>
+                <!-- Search & Cart -->
+                <div class="flex items-center space-x-4">
+                    <!-- Search Bar -->
+                    <div
+                        class="group relative border-2 border-darkGray flex items-center px-3 py-2 rounded-md shadow-sm transition-all duration-300 w-[200px] md:w-[250px">
+                        <input type="text" placeholder="Search..."
+                            class="w-full text-sm outline-none bg-transparent text-gray-700 placeholder-gray-400">
+                        <i
+                            class="fas fa-search text-darkGray hover:text-primary transition duration-300 cursor-pointer"></i>
+                    </div>
+
+                    <!-- Shopping Cart -->
+                    <a href="#"
+                        class="text-darkGray hover:text-primary transition duration-300 flex items-center relative">
+                        <i class="fas fa-shopping-cart text-2xl"></i>
+                        <!-- Cart Item Count -->
+                        <span
+                            class="absolute hidden -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5  items-center justify-center rounded-full"></span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu (Hidden by Default) -->
+                <div id="mobile-menu" class="mobile-menu fixed inset-0 bg-white z-50 h-screen">
+                    <div class="container mx-auto px-4  md:px-8 flex flex-col py-6 space-y-6">
+                        <div class="flex items-center justify-between">
+                            <div class="text-2xl font-bold text-darkGray ">
+                                <a href="#" class="transition duration-300">Tech<span
+                                        class="text-primary">Bazaar</span></a>
+                            </div>
+                            <button id="mobile-menu-close"
+                                class="text-primary hover:text-primary/80 focus:outline-none">
+                                <i class="fas fa-times text-3xl"></i>
+                            </button>
+                        </div>
+                        <nav class="flex flex-col space-y-3 font-medium px-1 mt-24 animate__fadeInLeft animate__animated">
+                            <a href="#" class="links">Home</a>
+                            <a href="#" class="links">Shop</a>
+                            <a href="#" class="links">Deals</a>
+                            <a href="#" class="links">Contact</a>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="relative hero min-h-screen flex items-center">
+        <div class="absolute inset-0 bg-primary/50 opacity-10"></div>
+        <div
+            class="container mx-auto px-4 md:px-8 lg:px-14 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center items-center z-10">
+            <div>
+                <h1
+                    class="text-gray-900 text-2xl mb-3 font-bold lg:text-4xl sm:text-3xl sm:mb-2 animate__fadeInLeft animate__animated">
+                    Welcome to ElectroHub!
+                </h1>
+                <p
+                    class="text-lg text-gray-800 mb-4 lg:text-2xl sm:text-xl lg:mb-8 animate__fadeInUp animate__animated">
+                    Discover the best electronics, from
+                    phones to laptops with great deals!</p>
+                <div class="animate__fadeInUpBig animate__animated">
+                    <a href="#"
+                        class="text-center border-2 font-bold text-white py-2 px-6 rounded-md transition duration-300 lg:py-4 lg:px-10 hover:bg-white hover:text-primary">Shop
+                        Now</a>
+                </div>
+            </div>
+
+            <div class="hidden lg:block lg:mt-20 relative animate__fadeInRight animate__animated">
+                <div class="absolute w-40 h-40 bg-primary blur-3xl rounded-full -top-10  left-10 "></div>
+                <div class="absolute w-40 h-40 bg-accent blur-3xl rounded-full top-24  right-5 "></div>
+                <div class="absolute w-20 h-20 bg-secondary blur-3xl rounded-full -bottom-28  right-60 "></div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="src/assets/Iphone 16 Pro Max.jpeg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="src/assets/Iphone 15.jpeg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="src/assets/Redmi Note 12.jpeg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="src/assets/Samsung S25 Ultra.jpeg" />
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- -->
+
+    <div class="h-80 bg-white w-full"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/swiper.js"></script>
+</body>
+
+</html>
