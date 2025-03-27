@@ -232,7 +232,7 @@ const updateCartUI = () => {
     })
     CartTotal.innerHTML = ` $${total.toFixed(2)}`
     CartCount.textContent = Cart.length
-    notfound.classList.add("hidden")
+    SavaCart()
 
 }
 
@@ -254,17 +254,22 @@ const removeFromCart = (Id) => {
     updateCartUI()
 }
 
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    let notfound = document.querySelector("notFound")
-    if (notfound.classList.contains("hidden")) {
-        notfound.classList.remove("hidden")
+const SavaCart = () => {
+    localStorage.setItem("Cart", JSON.stringify(Cart))
+    try {
+    } catch (error) {
+        console.log(error)
     }
-
-})
+}
+const LoadCart = () => {
+    let savedCart = localStorage.getItem("Cart")
+    if (savedCart) {
+        Cart = JSON.parse(savedCart)
+        updateCartUI()
+    } else {
+    }
+}
+LoadCart()
 
 
 
