@@ -4,11 +4,13 @@ var swiper = new Swiper(".mySwiper", {
     cubeEffect: {
         shadow: true,
         slideShadows: true,
-        shadowOffset: 20,
-        shadowScale: 0.95,
+        shadowOffset: 10,
+        shadowScale: 0.9,
     },
     autoplay: {
         delay: 1500,
         disableOnInteraction: false,
     },
 });
+
+

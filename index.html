@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="src/css/output.css">
     <link rel="stylesheet" href="src/css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Tech Bazaar</title>
     <style>
 
     </style>
 </head>
 
-<body class="bg-gray-50 font-poppins">
+<body class="font-poppins">
     <!-- Header Section -->
     <header class="bg-white w-full fixed shadow-md top-0 left-0 z-50 animate__fadeInDown animate__animated">
         <!-- Top Banner -->
@@ -30,29 +30,30 @@
                 </div>
                 <div class="flex items-center gap-4 text-gray-700 text-sm md:text-base">
                     <div class="flex items-center gap-2 hover:text-gray-900 transition">
-                        <i class="fas fa-phone text-lg"></i>
+                        <i class="fas fa-phone text-sm"></i>
                         <span>Call: +252 61XXXXXXX</span>
                     </div>
                     <div class="flex items-center gap-2 hover:text-gray-900 transition">
-                        <i class="fas fa-truck text-lg"></i>
+                        <i class="fas fa-truck text-sm"></i>
                         <span>Free Shipping!</span>
                     </div>
                 </div>
+
             </div>
         </div>
         <!-- Navbar-->
         <div class="bg-white">
-            <div class="container mx-auto px-4 md:px-8 lg:px-14 py-6 flex justify-between items-center">
+            <div class="container mx-auto px-4 md:px-8 lg:px-14 py-4 flex justify-between items-center">
                 <!-- Logo -->
-                <div class="text-2xl font-bold text-darkGray hidden md:block">
+                <div class="text-lg font-bold text-darkGray hidden md:block">
                     <a href="#" class="transition duration-300">Tech<span class="text-primary">Bazaar</span></a>
                 </div>
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-button" class="md:hidden text-primary hover:text-secondary focus:outline-none">
-                    <i class="fas fa-bars text-3xl"></i>
+                    <i class="fas fa-bars text-2xl"></i>
                 </button>
                 <!-- Desktop Navigation Links -->
-                <nav class="hidden md:flex space-x-6 font-medium">
+                <nav class="hidden md:flex space-x-4 font-medium">
                     <a href="#" class="links">Home</a>
                     <a href="#" class="links">Shop</a>
                     <a href="#" class="links">Deals</a>
@@ -62,7 +63,7 @@
                 <div class="flex items-center space-x-4">
                     <!-- Search Bar -->
                     <div
-                        class="group relative border-2 border-darkGray flex items-center px-3 py-2 rounded-md shadow-sm transition-all duration-300 w-[200px] md:w-[250px">
+                        class="group relative border-2 border-darkGray flex items-center px-3 py-1 rounded-md shadow-sm transition-all duration-300 w-[200px] md:w-[250px">
                         <input type="text" placeholder="Search..."
                             class="w-full text-sm outline-none bg-transparent text-gray-700 placeholder-gray-400">
                         <i
@@ -71,12 +72,47 @@
 
                     <!-- Shopping Cart -->
                     <a href="#"
-                        class="text-darkGray hover:text-primary transition duration-300 flex items-center relative">
-                        <i class="fas fa-shopping-cart text-2xl"></i>
+                        class="text-darkGray hover:text-primary transition duration-300 flex items-center relative"
+                        id="OpenCart">
+                        <i class="fas fa-shopping-cart text-xl"></i>
                         <!-- Cart Item Count -->
-                        <span
-                            class="absolute hidden -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5  items-center justify-center rounded-full"></span>
+                        <div
+                            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-4 h-4  flex items-center justify-center rounded-full">
+                            <span class="Count" id="Count">0</span>
+                        </div>
                     </a>
+                    <!-- Sidebar Cart -->
+                    <div class="side_bar bg-primary h-screen md:w-[400px] w-[320px] fixed top-0 shadow-2xl"
+                        id="side_bar">
+                        <!-- Cart Header -->
+                        <div
+                            class="bg-primary shadow-md border-b-2 border-gray-200 p-4 flex items-center justify-between rounded-b-lg">
+                            <h2 class="text-white text-xl font-semibold">Your Cart</h2>
+                            <button class="text-white hover:text-gray-200 transition-colors duration-300"
+                                id="CloseCart">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+
+                        <!-- Cart Items -->
+                        <div class="p-4 overflow-y-auto h-[70vh]  space-y-3" id="SideBarItems">
+
+                            <h2 class="text-gray-200 text-2xl text-center notFound">Your cart is empty</h2>
+
+                        </div>
+
+                        <!-- Cart Footer -->
+                        <div class="absolute bottom-0 w-full bg-accent p-4">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-primary text-lg font-semibold">Total:</h3>
+                                <p class="text-primary font-semibold text-lg" id="cart-total">$0</p>
+                            </div>
+                            <button
+                                class="w-full bg-white font-bold text-blue-600 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                Checkout
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Mobile Menu (Hidden by Default) -->
@@ -92,7 +128,8 @@
                                 <i class="fas fa-times text-3xl"></i>
                             </button>
                         </div>
-                        <nav class="flex flex-col space-y-3 font-medium px-1 mt-24 animate__fadeInLeft animate__animated">
+                        <nav
+                            class="flex flex-col space-y-3 font-medium px-1 mt-24 animate__fadeInLeft animate__animated">
                             <a href="#" class="links">Home</a>
                             <a href="#" class="links">Shop</a>
                             <a href="#" class="links">Deals</a>
@@ -111,37 +148,36 @@
             class="container mx-auto px-4 md:px-8 lg:px-14 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center items-center z-10">
             <div>
                 <h1
-                    class="text-gray-900 text-2xl mb-3 font-bold lg:text-4xl sm:text-3xl sm:mb-2 animate__fadeInLeft animate__animated">
+                    class="text-gray-900 text-xl mb-3 font-bold lg:text-3xl sm:text-2xl sm:mb-2 animate__fadeInLeft animate__animated">
                     Welcome to ElectroHub!
                 </h1>
-                <p
-                    class="text-lg text-gray-800 mb-4 lg:text-2xl sm:text-xl lg:mb-8 animate__fadeInUp animate__animated">
+                <p class="text-lg text-gray-800 mb-4 lg:text-xl sm:text-lg lg:mb-8 animate__fadeInUp animate__animated">
                     Discover the best electronics, from
                     phones to laptops with great deals!</p>
                 <div class="animate__fadeInUpBig animate__animated">
                     <a href="#"
-                        class="text-center border-2 font-bold text-white py-2 px-6 rounded-md transition duration-300 lg:py-4 lg:px-10 hover:bg-white hover:text-primary">Shop
+                        class="text-center border-2 font-bold text-white py-2 px-6 rounded-md transition duration-300 lg:py-3 lg:px-8 hover:bg-white hover:text-primary">Shop
                         Now</a>
                 </div>
             </div>
 
-            <div class="hidden lg:block lg:mt-20 relative animate__fadeInRight animate__animated">
+            <div class="hidden lg:block lg:mt-16 relative animate__fadeInRight animate__animated">
                 <div class="absolute w-40 h-40 bg-primary blur-3xl rounded-full -top-10  left-10 "></div>
                 <div class="absolute w-40 h-40 bg-accent blur-3xl rounded-full top-24  right-5 "></div>
                 <div class="absolute w-20 h-20 bg-secondary blur-3xl rounded-full -bottom-28  right-60 "></div>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="src/assets/Iphone 16 Pro Max.jpeg" />
+                            <img src="src/assets/Iphone 16 Pro Max.jpeg" loading="lazy" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="src/assets/Iphone 15.jpeg" />
+                            <img src="src/assets/Iphone 15.jpeg" loading="lazy" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="src/assets/Redmi Note 12.jpeg" />
+                            <img src="src/assets/Redmi Note 12.jpeg" loading="lazy" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="src/assets/Samsung S25 Ultra.jpeg" />
+                            <img src="src/assets/Samsung S25 Ultra.jpeg" loading="lazy" />
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -152,9 +188,156 @@
         </div>
     </div>
 
-    <!-- -->
+    <!-- Showing Product Section  -->
+    <section class="w-full bg-gray-100 py-20">
+        <div class="container mx-auto px-4 md:px-8 lg:px-14">
+            <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 place-items-center gap-8">
+                <!-- Card 1-->
+                <div
+                    class="bg-primary/50 w-full  rounded-md shadow-md py-6 px-3 grid grid-cols-2 gap-4 transition-shadow hover:shadow-lg">
+                    <!-- Heading -->
+                    <h2 class="col-span-2 w-full font-bold text-lg text-center">Samsung Galaxy Mobiles</h2>
+                    <!-- Big Card -->
+                    <div class="col-span-2 bg-gray-50 rounded-md p-4 flex items-center justify-center">
+                        <div class="h-[150px] w-full max-w-[150px] overflow-hidden rounded-md">
+                            <img src="src/assets/Samsung S25 Ultra.jpeg" alt="Samsung S25 Ultra"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Small Cards -->
+                    <div class="bg-gray-50 rounded-md p-4 flex items-center justify-center">
+                        <div class="h-[100px] max-w-[300px] w-full overflow-hidden rounded-md">
+                            <img src="src/assets/Samsung A70.jpeg" alt="Samsung A70" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-md p-4 flex items-center justify-center">
+                        <div class="h-[100px] max-w-[300px] w-full overflow-hidden rounded-md">
+                            <img src="src/assets/Samsung S23 Ultra.jpeg" alt="Samsung S23 Ultra"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-md p-4 flex items-center justify-center">
+                        <div class="h-[100px] max-w-[300px] w-full overflow-hidden rounded-md">
+                            <img src="src/assets/Samsung A70s.jpeg" alt="Samsung A70s"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-md p-4 flex items-center justify-center">
+                        <div class="h-[100px] max-w-[300px] w-full overflow-hidden rounded-md">
+                            <img src="src/assets/Samsung A50s.jpeg" alt="Samsung A50s"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2-->
+                <div
+                    class="bg-primary/50 w-full  rounded-md shadow-md py-6 px-3 grid grid-cols-2 gap-4 transition-shadow hover:shadow-lg">
+                    <!-- Heading -->
+                    <h2 class="col-span-2 w-full font-bold text-lg text-center">Iphone Mobiles</h2>
+                    <!-- Big Card -->
+                    <div class="col-span-2 bg-gray-50 rounded-md p-4 flex items-center justify-center">
+                        <div class="h-[150px] w-full max-w-[150px] overflow-hidden rounded-md">
+                            <img src="src/assets/Iphone 12.jpeg" alt="Iphone 12" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Small Cards -->
+                    <div class="bg-gray-50 rounded-md p-4 flex items-center justify-center">
+                        <div class="h-[100px] max-w-[300px] w-full overflow-hidden rounded-md">
+                            <img src="src/assets/Iphone 14 Pro Max.jpeg" alt="Iphone 14 Pro Max"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-md p-4 flex items-center justify-center">
+                        <div class="h-[100px] max-w-[300px] w-full overflow-hidden rounded-md">
+                            <img src="src/assets/Iphone X Max.jpeg" alt="Iphone X Max"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-md p-4 flex items-center justify-center">
+                        <div class="h-[100px] max-w-[300px] w-full overflow-hidden rounded-md">
+                            <img src="src/assets/Iphone 16 Pro Max.jpeg" alt="Iphone 16 Pro Max"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-md p-4 flex items-center justify-center">
+                        <div class="h-[100px] max-w-[300px] w-full overflow-hidden rounded-md">
+                            <img src="src/assets/Iphone 8.jpeg" alt="Iphone 8" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3-->
+                <div
+                    class="bg-primary/50 w-full  rounded-md shadow-md py-6 px-3 grid grid-cols-2 gap-4 transition-shadow hover:shadow-lg">
+                    <!-- Heading -->
+                    <h2 class="col-span-2 w-full font-bold text-lg text-center">Accessories for Mobiles</h2>
+                    <!-- Big Card -->
+                    <div class="col-span-2 bg-gray-50 rounded-md p-4 flex items-center justify-center">
+                        <div class="h-[150px] w-full max-w-[150px] overflow-hidden rounded-md">
+                            <img src="src/assets/Phone Cover.jpeg" alt="Phone Cover" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Small Cards -->
+                    <div class="bg-gray-50 rounded-md p-4 flex items-center justify-center col-span-2">
+                        <div class="h-[100px] max-w-[300px] w-full overflow-hidden rounded-md">
+                            <img src="src/assets/Headphones 1.jpeg" alt="Headphones 1"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-md p-4 flex items-center justify-center col-span-2">
+                        <div class="h-[100px] max-w-[300px] w-full overflow-hidden rounded-md">
+                            <img src="src/assets/Chargers 2.jpeg" alt="Chargers 2" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="bg-primary/50 w-full  rounded-md shadow-md py-6 px-3 grid grid-cols-2 gap-4 transition-shadow hover:shadow-lg">
+                    <!-- Heading -->
+                    <h2 class="col-span-2 w-full font-bold text-lg text-center">Accessories for Laptops</h2>
+                    <!-- Big Card -->
+                    <div class="col-span-2 bg-gray-50 rounded-md p-4 flex items-center justify-center">
+                        <div class="h-[450px] w-full max-w-[280px] overflow-hidden rounded-md">
+                            <img src="src/assets/Cooling Pads 2.jpeg" alt="Cooling Pad 2"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="h-80 bg-white w-full"></div>
+    <!-- New Products Section -->
+    <section class="bg-gray-50 py-10">
+        <div class="container mx-auto px-4 md:px-8 lg:px-14">
+            <h2 class="h2">New Products</h2>
+
+            <!-- Feature Cards Container -->
+            <div id="FeatureContainer" class="FeatureContainer">
+            </div>
+        </div>
+    </section>
+
+    <!-- Best-Seller product Section -->
+    <section class="bg-gray-50 py-10">
+        <div class="container mx-auto px-4 md:px-8 lg:px-14 B">
+            <h2 class="h2">New Products</h2>
+
+            <!-- Best-Seller Cards Container -->
+            <div id="BestSellerContainer" class="BestSellerContainer">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="src/js/main.js"></script>

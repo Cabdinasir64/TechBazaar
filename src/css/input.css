@@ -4,8 +4,99 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-@layer components{
-    .links{
-        @apply text-darkGray hover:text-primary transition duration-300
-    }
+
+.links {
+    @apply text-darkGray hover:text-primary transition duration-300
+}
+
+.FeatureContainer,
+.BestSellerContainer {
+    @apply md:grid lg:grid-cols-4 md:grid-cols-2 md:gap-6 flex flex-row gap-x-6 overflow-x-auto pb-4 transition-all snap-x snap-mandatory duration-300
+}
+
+.feature-card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 flex-shrink-0 w-64 md:w-auto snap-center
+}
+
+.feature-card-img-container {
+    @apply relative h-48
+}
+
+.feature-card-img-container img {
+    @apply w-full h-full object-cover
+}
+
+.feature-card-img-badge{
+    @apply absolute top-3 right-3 bg-primary text-white text-xs font-bold px-2.5 py-1 rounded-full
+}
+.BestSellerContainer .feature-card-img-badge {
+    @apply absolute top-3 right-3 bg-secondary text-white text-xs font-bold px-2.5 py-1 rounded-full
+}
+
+.feature-card-content {
+    @apply p-4
+}
+
+.feature-card-content-header {
+    @apply flex justify-between items-center mb-3
+}
+
+.feature-card-content-header-title {
+    @apply text-lg font-bold text-gray-800 truncate
+}
+
+.feature-card-content-header-subtitle {
+    @apply text-lg font-semibold text-primary ml-2
+}
+
+.feature-card-button {
+    @apply w-full flex items-center justify-center bg-primary hover:bg-primary/85 text-white py-2 px-4 rounded-lg transition-colors
+}
+
+.feature-card-button-icon {
+    @apply mr-2
+}
+
+.h2 {
+    @apply text-2xl font-bold mb-6 relative before:absolute before:-bottom-1 before:left-0 before:w-20 before:h-0.5 before:bg-gradient-to-r before:from-primary/80 before:bg-primary/10 before:to-transparent before:content-['']
+}
+.B h2{
+    @apply  text-2xl font-bold mb-6 relative before:absolute before:-bottom-1 before:left-0 before:w-20 before:h-0.5 before:bg-gradient-to-r before:from-secondary/80 before:bg-secondary/10 before:to-transparent before:content-['']
+}
+.BestSellerContainer .feature-card-button  {
+    @apply w-full flex items-center justify-center bg-secondary hover:bg-secondary/85 text-white py-2 px-4 rounded-lg transition-colors
+}
+.BestSellerContainer .feature-card-content-header-subtitle{
+    @apply text-lg font-semibold text-secondary ml-2
+}
+.item-container {
+    @apply flex items-center justify-between mb-2 bg-accent shadow-md rounded-lg p-2  hover:bg-accent/85;
+}
+
+.item-info {
+    @apply flex items-center justify-center gap-x-2;
+}
+
+.item-image {
+    @apply w-14 h-14 object-cover rounded-md;
+}
+
+.item-text {
+    @apply ml-3;
+}
+
+.item-title {
+    @apply text-gray-900 md:text-[.99rem] text-[.8rem] font-medium;
+}
+
+.item-price {
+    @apply text-gray-800 text-sm;
+}
+
+.quantity-btn {
+    @apply text-white bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300;
+}
+
+.remove-btn {
+    @apply text-red-500 hover:text-red-600 transition-colors duration-300 ;
 }
