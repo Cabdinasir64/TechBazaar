@@ -12,7 +12,6 @@ MobileMenuButton.addEventListener("click", () => {
 CloseMenu.addEventListener("click", () => {
     MobileMenu.classList.remove("active")
 })
-
 // Open sidebar
 OpenCart.addEventListener('click', (e) => {
     sideBar.classList.add('active');
@@ -21,10 +20,6 @@ OpenCart.addEventListener('click', (e) => {
 CloseCart.addEventListener('click', () => {
     sideBar.classList.remove('active');
 });
-
-
-
-
 let products = [
     {
         id: 1, name: 'Charger 1', price: 39.99, img: 'src/assets/Chargers 1.jpeg', colors: ['black', 'red', 'blue'],
@@ -117,9 +112,7 @@ let products = [
     { id: 69, name: 'WebCam 4', price: 329.99, img: 'src/assets/WebCam 4.jpeg', description: 'Upgrade your video calls and streaming with our high-quality webcams. Featuring HD resolution, auto-focus, and noise-cancelling microphones, they deliver clear video and audio for professional and personal use. Perfect for remote work, online classes, or virtual meetings.' },
     { id: 70, name: 'WebCam 5', price: 599.99, img: 'src/assets/WebCam 5.jpeg', description: 'Upgrade your video calls and streaming with our high-quality webcams. Featuring HD resolution, auto-focus, and noise-cancelling microphones, they deliver clear video and audio for professional and personal use. Perfect for remote work, online classes, or virtual meetings.' },
 ]
-
 let Cart = []
-
 
 const DisplayProducts = (containerId, limit = null, filterNew = false, filterBestSeller = false) => {
     let productContainer = document.getElementById(containerId);
@@ -178,7 +171,6 @@ const DisplayProducts = (containerId, limit = null, filterNew = false, filterBes
 
     });
 }
-
 const AddToCart = (productId) => {
     const product = products.find(item => item.id === productId);
     if (!product) return;
@@ -192,7 +184,6 @@ const AddToCart = (productId) => {
     }
     updateCartUI();
 }
-
 const updateCartUI = () => {
     let SideBarItems = document.getElementById('SideBarItems');
     let CartTotal = document.getElementById('cart-total');
@@ -230,13 +221,14 @@ const updateCartUI = () => {
 
         SideBarItems.appendChild(cartItem);
     })
-    CartTotal.innerHTML = ` $${total.toFixed(2)}`
+    CartTotal.innerHTML = formatMoney(total);
     CartCount.textContent = Cart.length
     SavaCart()
 
 }
-
-
+function formatMoney(amount) {
+    return `$${amount.toLocaleString()}`;
+}
 const increaseQuantity = (Id) => {
     Cart[Id].quantity += 1
     updateCartUI()
@@ -269,8 +261,6 @@ const LoadCart = () => {
     } else {
     }
 }
-
-
 document.addEventListener('DOMContentLoaded', () => {
     LoadCart()
     const faqItems = document.querySelectorAll('.faq-item');
