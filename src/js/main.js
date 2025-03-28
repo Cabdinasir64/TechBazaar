@@ -105,7 +105,7 @@ let products = [
     { id: 57, name: 'Samsung Galaxy S21', price: 549.99, img: 'src/assets/Samsung S21.jpeg', colors: ['black', 'darkblue', 'white'], description: 'Enhance your typing experience with our ergonomic and high-performance keyboards. Designed for comfort and efficiency, they feature responsive keys and durable builds. Perfect for work, gaming, or everyday use, our keyboards offer a smooth and reliable typing experience.' },
     { id: 58, name: 'Samsung Galaxy S23', price: 699.99, img: 'src/assets/Samsung S23 Ultra.jpeg', colors: ['black', 'darkblue', 'white'], description: 'Enhance your typing experience with our ergonomic and high-performance keyboards. Designed for comfort and efficiency, they feature responsive keys and durable builds. Perfect for work, gaming, or everyday use, our keyboards offer a smooth and reliable typing experience.' },
     { id: 59, name: 'Samsung Galaxy S23 Ultra', price: 649.99, img: 'src/assets/Samsung S23.jpeg', colors: ['black', 'darkblue', 'white'], description: 'Enhance your typing experience with our ergonomic and high-performance keyboards. Designed for comfort and efficiency, they feature responsive keys and durable builds. Perfect for work, gaming, or everyday use, our keyboards offer a smooth and reliable typing experience.' },
-    { id: 60, name: 'Samsung Galaxy S25 Ultra', price: 999.99, img: 'src/assets/Samsung S25 Ultra.jpeg', datanew: 'new', colors: ['black', 'darkblue', 'white'], description: 'Enhance your typing experience with our ergonomic and high-performance keyboards. Designed for comfort and efficiency, they feature responsive keys and durable builds. Perfect for work, gaming, or everyday use, our keyboards offer a smooth and reliable typing experience.' },
+    { id: 60, name: 'Samsung Galaxy S25 Ultra', price: 1199.99, img: 'src/assets/Samsung S25 Ultra.jpeg', datanew: 'new', colors: ['black', 'darkblue', 'white'], description: 'Enhance your typing experience with our ergonomic and high-performance keyboards. Designed for comfort and efficiency, they feature responsive keys and durable builds. Perfect for work, gaming, or everyday use, our keyboards offer a smooth and reliable typing experience.' },
     { id: 61, name: 'Samsung Galaxy S25', price: 969.99, img: 'src/assets/Samsung S25.jpeg', datanew: 'new', colors: ['black', 'darkblue', 'white'], description: 'Enhance your typing experience with our ergonomic and high-performance keyboards. Designed for comfort and efficiency, they feature responsive keys and durable builds. Perfect for work, gaming, or everyday use, our keyboards offer a smooth and reliable typing experience.' },
     { id: 62, name: 'USB 1', price: 29.99, img: 'src/assets/USB 1.jpeg', colors: ['black', 'white'], description: 'Store and transfer your data effortlessly with our reliable USB drives. Featuring high storage capacities and fast transfer speeds, they are perfect for work, school, or personal use. Compact and portable, our USB drives are designed for convenience and durability.' },
     { id: 63, name: 'USB 2', price: 19.99, img: 'src/assets/USB 2.jpeg', colors: ['black', 'white'], description: 'Store and transfer your data effortlessly with our reliable USB drives. Featuring high storage capacities and fast transfer speeds, they are perfect for work, school, or personal use. Compact and portable, our USB drives are designed for convenience and durability.' },
@@ -269,7 +269,37 @@ const LoadCart = () => {
     } else {
     }
 }
-LoadCart()
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    LoadCart()
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = question.querySelector('svg');
+
+        question.addEventListener('click', () => {
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.querySelector('.faq-answer').style.maxHeight = '0';
+                    otherItem.querySelector('svg').classList.remove('rotate');
+                }
+            });
+
+            // Toggle current item
+            if (answer.style.maxHeight === '0px' || !answer.style.maxHeight) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.classList.add('rotate');
+            } else {
+                answer.style.maxHeight = '0';
+                icon.classList.remove('rotate');
+            }
+        });
+    });
+});
 
 
 

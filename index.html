@@ -82,8 +82,7 @@
                         </div>
                     </a>
                     <!-- Sidebar Cart -->
-                    <div class="side_bar bg-primary h-screen md:w-[400px] w-full fixed top-0 shadow-2xl"
-                        id="side_bar">
+                    <div class="side_bar bg-primary h-screen md:w-[400px] w-full fixed top-0 shadow-2xl" id="side_bar">
                         <!-- Cart Header -->
                         <div
                             class="bg-primary shadow-md border-b-2 border-gray-200 p-4 flex items-center justify-between rounded-b-lg">
@@ -149,7 +148,7 @@
             <div>
                 <h1
                     class="text-gray-900 text-xl mb-3 font-bold lg:text-3xl sm:text-2xl sm:mb-2 animate__fadeInLeft animate__animated">
-                    Welcome to ElectroHub!
+                    Welcome to TechBazaar!
                 </h1>
                 <p class="text-lg text-gray-800 mb-4 lg:text-xl sm:text-lg lg:mb-8 animate__fadeInUp animate__animated">
                     Discover the best electronics, from
@@ -323,9 +322,9 @@
     </section>
 
     <!-- Best-Seller product Section -->
-    <section class="bg-gray-50 py-10">
+    <section class="bg-white py-10">
         <div class="container mx-auto px-4 md:px-8 lg:px-14 B">
-            <h2 class="h2">New Products</h2>
+            <h2 class="h2">BestSeller</h2>
 
             <!-- Best-Seller Cards Container -->
             <div id="BestSellerContainer" class="BestSellerContainer">
@@ -333,8 +332,597 @@
         </div>
     </section>
 
+    <!-- Hot Deals -->
+    <section class="bg-accent py-16">
+        <div class="container mx-auto px-4 md:px-8 lg:px-14">
+            <div class="flex justify-between items-center mb-12">
+                <div>
+                    <span class="text-primary font-semibold">HOT DEALS</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Today's Featured Products</h2>
+                </div>
+            </div>
+            <div
+                class="deal-carousel grid grid-flow-col auto-cols-[minmax(300px,1fr)] gap-6 overflow-x-auto py-4 scrollbar-hide">
+                <div class="bg-primary rounded-2xl p-6 hover:transform hover:-translate-y-2 transition duration-300">
+                    <div class="bg-gray-100 rounded-xl p-4 mb-4 flex justify-center">
+                        <div class="w-40 h-40 rounded-lg">
+                            <img src="src/assets/Iphone 15 Pro.jpeg" alt="Iphone 15 pro"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">iPhone 15 Pro</h3>
+                            <div class="flex items-center mt-1">
+                                <div class="text-yellow-400">★★★★★</div>
+                                <span class="text-gray-400 text-sm ml-2">(48)</span>
+                            </div>
+                        </div>
+                        <div class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">-20%</div>
+                    </div>
+                    <div class="mt-4 flex items-end justify-between">
+                        <div>
+                            <span class="text-gray-400 line-through">$639</span>
+                            <p class="text-2xl font-bold text-white">$620</p>
+                        </div>
+                        <button
+                            class="bg-white hover:bg-gray-100 text-primary px-4 py-2 rounded-lg font-medium transition"
+                            onclick="AddToCart(30)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-primary rounded-2xl p-6 hover:transform hover:-translate-y-2 transition duration-300">
+                    <div class="bg-gray-100 rounded-xl p-4 mb-4 flex justify-center">
+                        <div class="w-40 h-40 rounded-lg">
+                            <img src="src/assets/Samsung S23 Ultra.jpeg" alt="Samsung galaxy S25 ultra"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Galaxy S25 Ultra</h3>
+                            <div class="flex items-center mt-1">
+                                <div class="text-yellow-400">★★★★☆</div>
+                                <span class="text-gray-400 text-sm ml-2">(36)</span>
+                            </div>
+                        </div>
+                        <div class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">FLASH SALE</div>
+                    </div>
+                    <div class="mt-4 flex items-end justify-between">
+                        <div>
+                            <span class="text-gray-400 line-through">$1,199</span>
+                            <p class="text-2xl font-bold text-white">$1,099</p>
+                        </div>
+                        <button
+                            class="bg-white hover:bg-gray-100 text-primary px-4 py-2 rounded-lg font-medium transition"
+                            onclick="AddToCart(60)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-primary rounded-2xl p-6 hover:transform hover:-translate-y-2 transition duration-300">
+                    <div class="bg-gray-100 rounded-xl p-4 mb-4 flex justify-center">
+                        <div class="w-80 h-40 rounded-lg">
+                            <img src="src/assets/Ipad Pro.jpeg" alt="Ipad Pro" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">AirPods Pro </h3>
+                            <div class="flex items-center mt-1">
+                                <div class="text-yellow-400">★★★★★</div>
+                                <span class="text-gray-400 text-sm ml-2">(112)</span>
+                            </div>
+                        </div>
+                        <div class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">-10%</div>
+                    </div>
+                    <div class="mt-4 flex items-end justify-between">
+                        <div>
+                            <span class="text-gray-400 line-through">$1199</span>
+                            <p class="text-2xl font-bold text-white">$999.99</p>
+                        </div>
+                        <button
+                            class="bg-white hover:bg-gray-100 text-primary px-4 py-2 rounded-lg font-medium transition"
+                            onclick="AddToCart(15)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Comparison -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8 lg:px-14">
+            <div class="text-center mb-14">
+                <span class="text-primary font-semibold">SMART CHOICE</span>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2">Compare Top Models</h2>
+            </div>
+
+            <div class="bg-gray-50 rounded-2xl p-8">
+                <div class="grid grid-cols-12 gap-4">
+                    <!-- Header -->
+                    <div class="col-span-12 md:col-span-3">
+                        <h3 class="text-lg font-semibold text-gray-500">FEATURES</h3>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 bg-white rounded-xl md:p-6 p-2 shadow-sm">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-24 h-24 bg-gray-200 rounded-lg">
+                                <img src="src/assets/Iphone 15 Pro.jpeg" alt="Iphone 15 pro" loading="lazy"
+                                    class="w-full h-full rounded-lg">
+                            </div>
+                        </div>
+                        <h3 class="md:text-xl text-sm font-bold text-center">iPhone 15 Pro</h3>
+                        <p class="text-primary text-center font-medium">$639.99</p>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 bg-white rounded-xl md:p-6 p-2 shadow-sm">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-24 h-24 bg-gray-200 rounded-lg">
+                                <img src="src/assets/Samsung S25 Ultra.jpeg" alt="Samsung S25 ultra" loading="lazy"
+                                    class="w-full h-full rounded-lg">
+                            </div>
+                        </div>
+                        <h3 class="md:text-xl text-sm font-bold text-center">S25 Ultra</h3>
+                        <p class="text-primary text-center font-medium">$1199.99</p>
+                    </div>
+
+                    <!-- Comparison Rows -->
+                    <div class="col-span-12 md:col-span-3 pt-6">
+                        <p class="text-gray-700">Storage</p>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 pt-6 text-center">
+                        <p class="text-gray-900 font-medium">256GB</p>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 pt-6 text-center">
+                        <p class="text-gray-900 font-medium">512GB</p>
+                    </div>
+
+                    <div class="col-span-12 md:col-span-3 pt-6">
+                        <p class="text-gray-700">Display</p>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 pt-6 text-center">
+                        <p class="text-gray-900 font-medium">6.1" 120Hz</p>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 pt-6 text-center">
+                        <p class="text-gray-900 font-medium">6.8" 144Hz</p>
+                    </div>
+
+                    <div class="col-span-12 md:col-span-3 pt-6">
+                        <p class="text-gray-700">Chipset</p>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 pt-6 text-center">
+                        <p class="text-gray-900 font-medium">A17 Pro</p>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 pt-6 text-center">
+                        <p class="text-gray-900 font-medium">Snapdragon 8 Gen 3</p>
+                    </div>
+
+                    <div class="col-span-12 md:col-span-3 pt-6">
+                        <p class="text-gray-700">Battery</p>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 pt-6 text-center">
+                        <p class="text-gray-900 font-medium">Up to 23h</p>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 pt-6 text-center">
+                        <p class="text-gray-900 font-medium">Up to 28h</p>
+                    </div>
+                </div>
+
+                <div class="mt-10 flex justify-center space-x-4">
+                    <button
+                        class="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition">
+                        Buy iPhone
+                    </button>
+                    <button
+                        class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark transition">
+                        Buy Samsung
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buying Guides Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-8 lg:px-14">
+            <div class="text-center mb-14">
+                <span
+                    class="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-3">BUYING
+                    GUIDES</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Smart Tech Choices</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-3">Expert-curated guides to help you make informed
+                    decisions</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Guide 1 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-end p-6">
+                        <div class="absolute top-6 left-6">
+                            <span
+                                class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs font-semibold">SMARTPHONES</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white relative z-10">Best Phones 2024</h3>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <p class="text-gray-600 mb-5">Discover the top-rated smartphones this year with our
+                            comprehensive comparison and buying advice.</p>
+                        <div
+                            class="flex items-center text-primary font-medium group-hover:text-primary-dark transition">
+                            <span>Read Guide</span>
+                            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guide 2 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-emerald-500 to-teal-600 flex items-end p-6">
+                        <div class="absolute top-6 left-6">
+                            <span
+                                class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs font-semibold">LAPTOPS</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white relative z-10">Gaming Laptops</h3>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <p class="text-gray-600 mb-5">Find the perfect balance between performance and portability for
+                            serious gamers and creators.</p>
+                        <div
+                            class="flex items-center text-primary font-medium group-hover:text-primary-dark transition">
+                            <span>Read Guide</span>
+                            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guide 3 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-amber-500 to-pink-600 flex items-end p-6">
+                        <div class="absolute top-6 left-6">
+                            <span
+                                class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs font-semibold">ACCESSORIES</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white relative z-10">Essential Tech Gear</h3>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <p class="text-gray-600 mb-5">Enhance your devices with these must-have accessories for
+                            productivity and entertainment.</p>
+                        <div
+                            class="flex items-center text-primary font-medium group-hover:text-primary-dark transition">
+                            <span>Read Guide</span>
+                            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <button
+                    class="px-6 py-3 bg-white border-2 border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-md">
+                    Explore All Guides
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Showcase - n -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8 lg:px-14">
+            <div class="text-center mb-14">
+                <span class="text-primary font-semibold">BRANDS</span>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2">Shop by Brand</h2>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+                <!-- Apple -->
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-xl p-6 flex flex-col items-center justify-center transition-all hover:shadow-md hover:transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"
+                        class="h-12 w-12 object-contain mb-3">
+                    <span class="text-sm font-medium text-gray-700 group-hover:text-gray-900">Apple</span>
+                </div>
+
+                <!-- Samsung -->
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-xl p-6 flex flex-col items-center justify-center transition-all hover:shadow-md hover:transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung"
+                        class="h-8 w-20 object-contain mb-3">
+                    <span class="text-sm font-medium text-gray-700 group-hover:text-gray-900">Samsung</span>
+                </div>
+
+                <!-- Xiaomi -->
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-xl p-6 flex flex-col items-center justify-center transition-all hover:shadow-md hover:transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Xiaomi"
+                        class="h-10 w-16 object-contain mb-3">
+                    <span class="text-sm font-medium text-gray-700 group-hover:text-gray-900">Xiaomi</span>
+                </div>
+
+                <!-- Dell -->
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-xl p-6 flex flex-col items-center justify-center transition-all hover:shadow-md hover:transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg" alt="Dell"
+                        class="h-8 w-16 object-contain mb-3">
+                    <span class="text-sm font-medium text-gray-700 group-hover:text-gray-900">Dell</span>
+                </div>
+
+                <!-- HP -->
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-xl p-6 flex flex-col items-center justify-center transition-all hover:shadow-md hover:transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg" alt="HP"
+                        class="h-10 w-10 object-contain mb-3">
+                    <span class="text-sm font-medium text-gray-700 group-hover:text-gray-900">HP</span>
+                </div>
+
+                <!-- Lenovo -->
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-xl p-6 flex flex-col items-center justify-center transition-all hover:shadow-md hover:transform hover:-translate-y-1">
+                    <img src="https://seekvectors.com/files/download/Huawei-logo.png" alt="Tecno"
+                        class="h-10 w-10 object-contain mb-3">
+                    <span class="text-sm font-medium text-gray-700 group-hover:text-gray-900">Huawei</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4 md:px-8 lg:px-14">
+            <div class="text-center mb-14">
+                <span class="text-primary font-semibold">TESTIMONIALS</span>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2">Trusted by Tech Enthusiasts</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
+                    <p class="text-gray-600 text-lg">"The fastest delivery I've ever experienced. My new phone arrived
+                        in perfect condition!"</p>
+                    <div class="mt-6 flex items-center">
+                        <div class="w-12 h-12 rounded-full">
+                            <img src="src/assets/user1.avif" alt="user1" loading="lazy"
+                                class="h-full w-full object-cover rounded-full">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">John Doe</h4>
+                            <p class="text-gray-500 text-sm">Tech Blogger</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
+                    <p class="text-gray-600 text-lg">"Exceptional customer service helped me choose the perfect laptop
+                        for my needs."</p>
+                    <div class="mt-6 flex items-center">
+                        <div class="w-12 h-12 rounded-full">
+                            <img src="src/assets/user5.avif" alt="user5" loading="lazy"
+                                class="h-full w-full object-cover rounded-full">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Sarah Lee</h4>
+                            <p class="text-gray-500 text-sm">Graphic Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-yellow-400 text-2xl mb-4">★★★★☆</div>
+                    <p class="text-gray-600 text-lg">"Competitive prices and regular flash sales make this my go-to tech
+                        store."</p>
+                    <div class="mt-6 flex items-center">
+                        <div class="w-12 h-12 rounded-full">
+                            <img src="src/assets/user3.avif" alt="user3" loading="lazy"
+                                class="h-full w-full object-cover rounded-full">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Mark Smith</h4>
+                            <p class="text-gray-500 text-sm">Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8 lg:px-14">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">HELP
+                    CENTER</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4">Common Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-3">Get instant answers to your questions</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question w-full flex justify-between items-center group px-1">
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-800 p-3 group-hover:text-primary transition">
+                            What payment methods do you accept?</h3>
+                        <div class="ml-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-gray-400 group-hover:text-primary transition-transform duration-300 transform"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 overflow-hidden transition-all duration-300 max-h-0">
+                        <div class="pb-4 px-4">
+                            <p>We accept credit/debit cards (Visa, MasterCard, Amex), PayPal, Apple Pay, and Google Pay.
+                                We also offer financing options for select products.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question w-full flex justify-between items-center group px-1">
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-800 group-hover:text-primary transition p-3">
+                            How long does shipping take?</h3>
+                        <div class="ml-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-gray-400 group-hover:text-primary transition-transform duration-300 transform"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 overflow-hidden transition-all duration-300 max-h-0">
+                        <div class="pb-4 px-4">
+                            <p>Standard shipping takes 5-7 business days, while express shipping takes 2-3 business
+                                days. Delivery times may vary based on location.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question w-full flex justify-between items-center group px-1">
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-800 group-hover:text-primary transition p-3">
+                            Do you offer a warranty on products?</h3>
+                        <div class="ml-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-gray-400 group-hover:text-primary transition-transform duration-300 transform"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 overflow-hidden transition-all duration-300 max-h-0">
+                        <div class="pb-4 px-4">
+                            <p>Yes, all products come with a manufacturer's warranty. Additionally, we offer extended
+                                warranty options for extra coverage.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question w-full flex justify-between items-center group px-1">
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-800 group-hover:text-primary transition p-3">
+                            Can I return or exchange a product?</h3>
+                        <div class="ml-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-gray-400 group-hover:text-primary transition-transform duration-300 transform"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 overflow-hidden transition-all duration-300 max-h-0">
+                        <div class="pb-4 px-4">
+                            <p>Yes, we have a 30-day return policy. The item must be in its original condition with all
+                                packaging and accessories.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question w-full flex justify-between items-center group px-1">
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-800 group-hover:text-primary transition p-3">
+                            How can I track my order?</h3>
+                        <div class="ml-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-gray-400 group-hover:text-primary transition-transform duration-300 transform"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 overflow-hidden transition-all duration-300 max-h-0">
+                        <div class="pb-4 px-4">
+                            <p>Once your order is shipped, you will receive a tracking link via email or SMS to monitor
+                                your package in real-time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 md:px-8 lg:px-14">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Branding -->
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold">Tech<span class="text-primary">Bazaar</span></h2>
+                    <p class="text-gray-400 mt-2">Your trusted tech partner</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex flex-wrap justify-center gap-6 md:gap-10">
+                    <a href="#" class="text-gray-300 hover:text-white transition">Home</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition">Shop</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition">Deals</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition">Contact</a>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-800 my-8"></div>
+
+            <!-- Bottom Row -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 TechShop. All rights reserved.</p>
+
+                <!-- Social Icons -->
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
 

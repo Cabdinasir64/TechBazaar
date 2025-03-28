@@ -145,3 +145,6 @@ input {
 #SideBarItems::-webkit-scrollbar {
     display: none; 
 }
+.rotate{
+    transform: rotate(45deg);
+}
