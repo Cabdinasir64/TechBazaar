@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Tech Bazaar</title>
-    <style>
-
-    </style>
 </head>
 
 <body class="font-poppins">
@@ -54,10 +51,10 @@
                 </button>
                 <!-- Desktop Navigation Links -->
                 <nav class="hidden md:flex space-x-4 font-medium">
-                    <a href="#" class="links">Home</a>
-                    <a href="#" class="links">Shop</a>
-                    <a href="#" class="links">Deals</a>
-                    <a href="#" class="links">Contact</a>
+                    <a href="index.html" class="links">Home</a>
+                    <a href="shop.html" class="links">Shop</a>
+                    <a href="deals.html" class="links">Deals</a>
+                    <a href="contact.html" class="links">Contact</a>
                 </nav>
                 <!-- Search & Cart -->
                 <div class="flex items-center space-x-4">
@@ -129,10 +126,10 @@
                         </div>
                         <nav
                             class="flex flex-col space-y-3 font-medium px-1 mt-24 animate__fadeInLeft animate__animated">
-                            <a href="#" class="links">Home</a>
-                            <a href="#" class="links">Shop</a>
-                            <a href="#" class="links">Deals</a>
-                            <a href="#" class="links">Contact</a>
+                            <a href="index.html" class="links">Home</a>
+                            <a href="shop.html" class="links">Shop</a>
+                            <a href="deals.html" class="links">Deals</a>
+                            <a href="contact.html" class="links">Contact</a>
                         </nav>
                     </div>
                 </div>
@@ -154,7 +151,7 @@
                     Discover the best electronics, from
                     phones to laptops with great deals!</p>
                 <div class="animate__fadeInUpBig animate__animated">
-                    <a href="#"
+                    <a href="shop.html"
                         class="text-center border-2 font-bold text-white py-2 px-6 rounded-md transition duration-300 lg:py-3 lg:px-8 hover:bg-white hover:text-primary">Shop
                         Now</a>
                 </div>
@@ -745,130 +742,115 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-14">
-            <div class="text-center mb-12">
-                <span class="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">HELP
-                    CENTER</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4">Common Questions</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-3">Get instant answers to your questions</p>
+   <!-- FAQ Section -->
+<section class="py-12 md:py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-10 md:mb-12">
+        <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium tracking-wide">HELP CENTER</span>
+        <h2 class="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">Common Questions</h2>
+        <p class="mt-2 md:mt-3 text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">Get instant answers to your questions</p>
+      </div>
+  
+      <!-- FAQ Items -->
+      <div class="max-w-3xl mx-auto">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item mb-3 border border-gray-200 rounded-lg overflow-hidden hover:border-gray-300 transition-colors">
+          <button class="faq-question w-full flex justify-between items-center p-4 sm:p-5 group focus:outline-none">
+            <h3 class="text-left text-base sm:text-lg font-semibold text-gray-800 group-hover:text-primary transition-colors pr-2">
+              What payment methods do you accept?
+            </h3>
+            <div class="ml-2 flex-shrink-0 transform transition-transform duration-300">
+              <svg class="w-5 h-5 text-gray-500 group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+              </svg>
             </div>
-
-            <div class="max-w-3xl mx-auto">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item mb-4 border-b border-gray-200 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center group px-1">
-                        <h3
-                            class="text-lg md:text-xl font-semibold text-gray-800 p-3 group-hover:text-primary transition">
-                            What payment methods do you accept?</h3>
-                        <div class="ml-4 flex-shrink-0">
-                            <svg class="w-6 h-6 text-gray-400 group-hover:text-primary transition-transform duration-300 transform"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                            </svg>
-                        </div>
-                    </button>
-                    <div class="faq-answer mt-2 text-gray-600 overflow-hidden transition-all duration-300 max-h-0">
-                        <div class="pb-4 px-4">
-                            <p>We accept credit/debit cards (Visa, MasterCard, Amex), PayPal, Apple Pay, and Google Pay.
-                                We also offer financing options for select products.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="faq-item mb-4 border-b border-gray-200 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center group px-1">
-                        <h3
-                            class="text-lg md:text-xl font-semibold text-gray-800 group-hover:text-primary transition p-3">
-                            How long does shipping take?</h3>
-                        <div class="ml-4 flex-shrink-0">
-                            <svg class="w-6 h-6 text-gray-400 group-hover:text-primary transition-transform duration-300 transform"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                            </svg>
-                        </div>
-                    </button>
-                    <div class="faq-answer mt-2 text-gray-600 overflow-hidden transition-all duration-300 max-h-0">
-                        <div class="pb-4 px-4">
-                            <p>Standard shipping takes 5-7 business days, while express shipping takes 2-3 business
-                                days. Delivery times may vary based on location.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="faq-item mb-4 border-b border-gray-200 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center group px-1">
-                        <h3
-                            class="text-lg md:text-xl font-semibold text-gray-800 group-hover:text-primary transition p-3">
-                            Do you offer a warranty on products?</h3>
-                        <div class="ml-4 flex-shrink-0">
-                            <svg class="w-6 h-6 text-gray-400 group-hover:text-primary transition-transform duration-300 transform"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                            </svg>
-                        </div>
-                    </button>
-                    <div class="faq-answer mt-2 text-gray-600 overflow-hidden transition-all duration-300 max-h-0">
-                        <div class="pb-4 px-4">
-                            <p>Yes, all products come with a manufacturer's warranty. Additionally, we offer extended
-                                warranty options for extra coverage.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="faq-item mb-4 border-b border-gray-200 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center group px-1">
-                        <h3
-                            class="text-lg md:text-xl font-semibold text-gray-800 group-hover:text-primary transition p-3">
-                            Can I return or exchange a product?</h3>
-                        <div class="ml-4 flex-shrink-0">
-                            <svg class="w-6 h-6 text-gray-400 group-hover:text-primary transition-transform duration-300 transform"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                            </svg>
-                        </div>
-                    </button>
-                    <div class="faq-answer mt-2 text-gray-600 overflow-hidden transition-all duration-300 max-h-0">
-                        <div class="pb-4 px-4">
-                            <p>Yes, we have a 30-day return policy. The item must be in its original condition with all
-                                packaging and accessories.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 5 -->
-                <div class="faq-item mb-4 border-b border-gray-200 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center group px-1">
-                        <h3
-                            class="text-lg md:text-xl font-semibold text-gray-800 group-hover:text-primary transition p-3">
-                            How can I track my order?</h3>
-                        <div class="ml-4 flex-shrink-0">
-                            <svg class="w-6 h-6 text-gray-400 group-hover:text-primary transition-transform duration-300 transform"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                            </svg>
-                        </div>
-                    </button>
-                    <div class="faq-answer mt-2 text-gray-600 overflow-hidden transition-all duration-300 max-h-0">
-                        <div class="pb-4 px-4">
-                            <p>Once your order is shipped, you will receive a tracking link via email or SMS to monitor
-                                your package in real-time.</p>
-                        </div>
-                    </div>
-                </div>
+          </button>
+          <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+            <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-600 text-sm sm:text-base">
+              <p>We accept credit/debit cards (Visa, MasterCard, Amex), PayPal, Apple Pay, and Google Pay. We also offer financing options for select products.</p>
             </div>
+          </div>
         </div>
-    </section>
-
+  
+        <!-- FAQ Item 2 -->
+        <div class="faq-item mb-3 border border-gray-200 rounded-lg overflow-hidden hover:border-gray-300 transition-colors">
+          <button class="faq-question w-full flex justify-between items-center p-4 sm:p-5 group focus:outline-none">
+            <h3 class="text-left text-base sm:text-lg font-semibold text-gray-800 group-hover:text-primary transition-colors pr-2">
+              How long does shipping take?
+            </h3>
+            <div class="ml-2 flex-shrink-0 transform transition-transform duration-300">
+              <svg class="w-5 h-5 text-gray-500 group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+            <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-600 text-sm sm:text-base">
+              <p>Standard shipping takes 5-7 business days, while express shipping takes 2-3 business days. Delivery times may vary based on location.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- FAQ Item 3 -->
+        <div class="faq-item mb-3 border border-gray-200 rounded-lg overflow-hidden hover:border-gray-300 transition-colors">
+          <button class="faq-question w-full flex justify-between items-center p-4 sm:p-5 group focus:outline-none">
+            <h3 class="text-left text-base sm:text-lg font-semibold text-gray-800 group-hover:text-primary transition-colors pr-2">
+              Do you offer a warranty on products?
+            </h3>
+            <div class="ml-2 flex-shrink-0 transform transition-transform duration-300">
+              <svg class="w-5 h-5 text-gray-500 group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+            <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-600 text-sm sm:text-base">
+              <p>Yes, all products come with a manufacturer's warranty. Additionally, we offer extended warranty options for extra coverage.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- FAQ Item 4 -->
+        <div class="faq-item mb-3 border border-gray-200 rounded-lg overflow-hidden hover:border-gray-300 transition-colors">
+          <button class="faq-question w-full flex justify-between items-center p-4 sm:p-5 group focus:outline-none">
+            <h3 class="text-left text-base sm:text-lg font-semibold text-gray-800 group-hover:text-primary transition-colors pr-2">
+              Can I return or exchange a product?
+            </h3>
+            <div class="ml-2 flex-shrink-0 transform transition-transform duration-300">
+              <svg class="w-5 h-5 text-gray-500 group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+            <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-600 text-sm sm:text-base">
+              <p>Yes, we have a 30-day return policy. The item must be in its original condition with all packaging and accessories.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- FAQ Item 5 -->
+        <div class="faq-item mb-3 border border-gray-200 rounded-lg overflow-hidden hover:border-gray-300 transition-colors">
+          <button class="faq-question w-full flex justify-between items-center p-4 sm:p-5 group focus:outline-none">
+            <h3 class="text-left text-base sm:text-lg font-semibold text-gray-800 group-hover:text-primary transition-colors pr-2">
+              How can I track my order?
+            </h3>
+            <div class="ml-2 flex-shrink-0 transform transition-transform duration-300">
+              <svg class="w-5 h-5 text-gray-500 group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+            <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-600 text-sm sm:text-base">
+              <p>Once your order is shipped, you will receive a tracking link via email or SMS to monitor your package in real-time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
@@ -882,10 +864,10 @@
 
                 <!-- Quick Links -->
                 <div class="flex flex-wrap justify-center gap-6 md:gap-10">
-                    <a href="#" class="text-gray-300 hover:text-white transition">Home</a>
-                    <a href="#" class="text-gray-300 hover:text-white transition">Shop</a>
-                    <a href="#" class="text-gray-300 hover:text-white transition">Deals</a>
-                    <a href="#" class="text-gray-300 hover:text-white transition">Contact</a>
+                    <a href="index.html" class="text-gray-300 hover:text-white transition">Home</a>
+                    <a href="shop.html" class="text-gray-300 hover:text-white transition">Shop</a>
+                    <a href="deals.html" class="text-gray-300 hover:text-white transition">Deals</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a>
                 </div>
             </div>
 

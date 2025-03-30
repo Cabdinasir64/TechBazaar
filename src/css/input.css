@@ -29,6 +29,9 @@
 .feature-card-img-badge{
     @apply absolute top-3 right-3 bg-primary text-white text-xs font-bold px-2.5 py-1 rounded-full
 }
+.feature-card-img-badge.hidden-badge{
+    @apply hidden
+}
 .BestSellerContainer .feature-card-img-badge {
     @apply absolute top-3 right-3 bg-secondary text-white text-xs font-bold px-2.5 py-1 rounded-full
 }
@@ -100,3 +103,21 @@
 .remove-btn {
     @apply text-red-500 hover:text-red-600 transition-colors duration-300 ;
 }
+.none{
+    @apply bg-white
+}
+.button{
+    @apply bg-primary hover:bg-primary/85 text-white py-2 px-4 rounded-md cursor-pointer transition-all duration-300 font-bold text-lg 
+}
+.pageButton{
+    @apply bg-gray-200 hover:bg-gray-300 py-2 px-4 mx-[5px] rounded-md cursor-pointer font-medium transition-all duration-300
+}
+.pageButton.active{
+    @apply bg-primary text-white
+}
+.filter-option.active{
+    @apply bg-primary text-white transition-all duration-300 hover:bg-primary/80
+}
+
+
+

@@ -2,8 +2,13 @@
 module.exports = {
   content: [
     "./index.html",
+    "./shop.html",
+    "./deals.html",
+    "./contact.html",
+    "./product-overview.html",
     "./src//*.html",
     "./src//*.js"
+
   ],
 
   theme: {

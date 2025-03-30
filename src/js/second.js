@@ -1,28 +1,4 @@
-
-
-let MobileMenuButton = document.getElementById("mobile-menu-button")
-let MobileMenu = document.getElementById("mobile-menu")
-let CloseMenu = document.getElementById("mobile-menu-close")
-let CloseCart = document.getElementById("CloseCart")
-let OpenCart = document.getElementById("OpenCart")
-let sideBar = document.getElementById("side_bar")
-
-
-MobileMenuButton.addEventListener("click", () => {
-    MobileMenu.classList.toggle("active")
-})
-CloseMenu.addEventListener("click", () => {
-    MobileMenu.classList.remove("active")
-})
-// Open sidebar
-OpenCart.addEventListener('click', (e) => {
-    sideBar.classList.add('active');
-});
-// Close sidebar
-CloseCart.addEventListener('click', () => {
-    sideBar.classList.remove('active');
-});
-let products = [
+let Products = [
     {
         id: 1, name: 'Charger 1', price: 39.99, img: 'src/assets/Chargers 1.jpeg', colors: ['black', 'red', 'blue'],
         description: 'Our chargers are designed to provide fast and efficient charging for all your devices. With advanced safety features, they protect your devices from overcharging and overheating. Perfect for home, office, or travel, these chargers are compact, durable, and reliable.'
@@ -114,47 +90,34 @@ let products = [
     { id: 69, name: 'WebCam 4', price: 329.99, img: 'src/assets/WebCam 4.jpeg', description: 'Upgrade your video calls and streaming with our high-quality webcams. Featuring HD resolution, auto-focus, and noise-cancelling microphones, they deliver clear video and audio for professional and personal use. Perfect for remote work, online classes, or virtual meetings.' },
     { id: 70, name: 'WebCam 5', price: 599.99, img: 'src/assets/WebCam 5.jpeg', description: 'Upgrade your video calls and streaming with our high-quality webcams. Featuring HD resolution, auto-focus, and noise-cancelling microphones, they deliver clear video and audio for professional and personal use. Perfect for remote work, online classes, or virtual meetings.' },
 ]
-let Cart = []
-
-const DisplayProducts = (containerId, limit = null, filterNew = false, filterBestSeller = false) => {
-    let productContainer = document.getElementById(containerId);
 
 
-    let filteredProducts = products.filter(item => {
-        // Check both filters
-        if (filterNew && filterBestSeller) {
-            return item.datanew && item.dataseller;
-        }
-        // Check new products only
-        else if (filterNew) {
-            return item.datanew;
-        }
-        // Check best sellers only
-        else if (filterBestSeller) {
-            return item.dataseller;
-        }
-        // Return all products if no filters
-        else {
-            return true;
-        }
-    });
-    // Apply limit if specified
-    if (limit) {
-        filteredProducts = filteredProducts.slice(0, limit);
-    }
-    filteredProducts.forEach((item) => {
+const itemsPerPage = 12;
+let currentPage = 1;
+let filteredProducts = [...Products];
+
+const renderItems = () => {
+
+    let ShopProduct = document.getElementById("ShopProduct")
+    ShopProduct.innerHTML = ''
+    let Start = (currentPage - 1) * itemsPerPage
+    let End = Start + itemsPerPage
+    let paginatedItems = filteredProducts.slice(Start, End)
+
+    paginatedItems.forEach(item => {
         let ProductCard = document.createElement('div');
         ProductCard.classList.add("Feature-card")
-        ProductCard.onclick = () => { ProductView(item) }
+        let badgeVisibility = (item.datanew || item.dataseller) ? '' : 'hidden-badge';
+        ProductCard.onclick = () => {productView(item)}
         ProductCard.innerHTML = `
          <div class="feature-card">
                     <!-- Image Container -->
                     <div class="feature-card-img-container">
                         <img src="${item.img}"  class="" loading="lazy">
                         <!-- Badge -->
-                        <div class="feature-card-img-badge">
-                            ${item.datanew ? 'New' : (item.dataseller ? 'BestSeller' : '')}
-                        </div>
+                       <div class="feature-card-img-badge ${badgeVisibility}">
+                ${(item.datanew ? 'New' : item.dataseller ? 'BestSeller' : '')}
+            </div>
                     </div>
                     <!-- Content -->
                     <div class="feature-card-content">
@@ -170,138 +133,102 @@ const DisplayProducts = (containerId, limit = null, filterNew = false, filterBes
                     </div>
                 </div>
         `
-        productContainer.appendChild(ProductCard);
-
-    });
-}
-const AddToCart = (productId) => {
-    const product = products.find(item => item.id === productId);
-    if (!product) return;
-
-    const CartItem = Cart.find(item => item.id === product.id);
-
-    if (CartItem) {
-        CartItem.quantity += 1;
-    } else {
-        Cart.push({ ...product, quantity: 1 });
-    }
-    updateCartUI();
-}
-const updateCartUI = () => {
-    let SideBarItems = document.getElementById('SideBarItems');
-    let CartTotal = document.getElementById('cart-total');
-    let CartCount = document.getElementById("Count");
-    let total = 0
-    SideBarItems.innerHTML = '';
-
-
-    Cart.forEach((item, key) => {
-        total += item.price * item.quantity;
-        let cartItem = document.createElement("div");
-        cartItem.className = "item-container";
-        cartItem.innerHTML = `
-            <div class="item-info">
-                <img src="${item.img}" alt="Product Image" class="item-image">
-                <div class="item-text">
-                    <h3 class="item-title">${item.name}</h3>
-                    <p class="item-price">$${item.price}</p>
-                </div>
-            </div>
-            <div class="item-info">
-                <button onclick="decreaseQuantity(${key})" class="quantity-btn">
-                    <i class="fa fa-minus"></i>
-                </button>
-                <span class="text-gray-900 mx-3">${item.quantity}</span>
-                <button onclick="increaseQuantity(${key})" class="quantity-btn">
-                    <i class="fa fa-plus"></i>
-                </button>
-                   <button onclick="removeFromCart(${key})" class="remove-btn">
-                <i class="fa fa-trash"></i>
-            </button>
-            </div>
-         
-        `;
-
-        SideBarItems.appendChild(cartItem);
+        ShopProduct.appendChild(ProductCard)
+        renderPagination()
     })
-    CartTotal.innerHTML = formatMoney(total);
-    CartCount.textContent = Cart.length
-    SavaCart()
-
-}
-function formatMoney(amount) {
-    return `$${amount.toLocaleString()}`;
-}
-const increaseQuantity = (Id) => {
-    Cart[Id].quantity += 1
-    updateCartUI()
-}
-const decreaseQuantity = (Id) => {
-    if (Cart[Id].quantity > 1) {
-        Cart[Id].quantity -= 1;
-    } else {
-        Cart.splice(Id, 1);
-    }
-    updateCartUI();
-}
-const removeFromCart = (Id) => {
-    Cart.splice(Id, 1);
-    updateCartUI()
 }
 
-const SavaCart = () => {
-    localStorage.setItem("Cart", JSON.stringify(Cart))
-    try {
-    } catch (error) {
-        console.log(error)
-    }
-}
-const LoadCart = () => {
-    let savedCart = localStorage.getItem("Cart")
-    if (savedCart) {
-        Cart = JSON.parse(savedCart)
-        updateCartUI()
-    } else {
-    }
-}
+const renderPagination = () => {
+    let pagination = document.getElementById("pagination");
+    pagination.innerHTML = "";
 
-const ProductView = (Item) => {
+    let totalPages = Math.ceil(Products.length / itemsPerPage);
+
+    // Previous Button
+    const prevButton = document.createElement("button");
+    prevButton.innerHTML = `<i class="fa fa-chevron-left"></i>`;
+    prevButton.className = "button";
+    prevButton.hidden = (currentPage === 1);
+
+    prevButton.onclick = () => {
+        if (currentPage > 1) {
+            currentPage--;
+            renderItems();
+            renderPagination();
+        }
+    };
+    pagination.appendChild(prevButton);
+
+    for (let i = 1; i <= totalPages; i++) {
+        let pageButton = document.createElement("button");
+        pageButton.textContent = i;
+        pageButton.className = "pageButton";
+
+        if (i === currentPage) {
+            pageButton.classList.add("active");
+        }
+
+        pageButton.onclick = () => {
+            currentPage = i;
+            document.querySelectorAll(".pageButton").forEach(button => {
+                button.classList.remove("active");
+            });
+            pageButton.classList.add("active");
+            renderItems();
+            renderPagination();
+        };
+        pagination.appendChild(pageButton);
+    }
+
+    const nextButton = document.createElement("button");
+    nextButton.innerHTML = `<i class="fa fa-chevron-right"></i>`;
+    nextButton.className = "button";
+    nextButton.hidden = (currentPage === totalPages);
+
+    nextButton.onclick = () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderItems();
+            renderPagination();
+        }
+    };
+
+    pagination.appendChild(nextButton);
+};
+const applyFilter = (filterType) => {
+    if (filterType === "all") {
+        filteredProducts = [...Products];
+    }
+    else if (filterType === "newest") {
+        filteredProducts = Products.filter(p => p.datanew)
+    } else if (filterType === "price-low") {
+        filteredProducts = Products.sort((a, b) => a.price - b.price);
+    } else if (filterType === "price-high") {
+        filteredProducts = Products.sort((a, b) => b.price - a.price);
+    }
+    currentPage = 1;
+    renderItems();
+};
+document.addEventListener("DOMContentLoaded", () => {
+    renderItems();
+    document.querySelectorAll(".filter-option").forEach(option => {
+        option.addEventListener("click", function () {
+            document.querySelectorAll(".filter-option").forEach(p => p.classList.remove("active"))
+            let filterType = this.getAttribute("data-sort");
+            applyFilter(filterType);
+            option.classList.add("active")
+        });
+    });
+});
+
+const productView = (Item) => {
     if (!Array.isArray(Item)) {
         Item = [Item];
     }
     localStorage.setItem("Item", JSON.stringify(Item));
     window.location.href = "product-overview.html";
-
 }
-document.addEventListener('DOMContentLoaded', () => {
-    LoadCart()
-    const faqItems = document.querySelectorAll('.faq-item');
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        const icon = question.querySelector('svg');
-
-        question.addEventListener('click', () => {
-            // Close all other FAQ items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.querySelector('.faq-answer').style.maxHeight = '0';
-                    otherItem.querySelector('svg').classList.remove('rotate');
-                }
-            });
-
-            // Toggle current item
-            if (answer.style.maxHeight === '0px' || !answer.style.maxHeight) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                icon.classList.add('rotate');
-            } else {
-                answer.style.maxHeight = '0';
-                icon.classList.remove('rotate');
-            }
-        });
-    });
-});
 document.addEventListener("DOMContentLoaded", function () {
     let name = document.getElementById("name");
     let description = document.getElementById("description");
@@ -310,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let colors = document.getElementById("color");
     let button = document.getElementById("buttons");
     let bgImg = document.getElementById("bgImg");
-
+    
 
     let storedItem = localStorage.getItem("Item");
     let ItemOverView = storedItem ? JSON.parse(storedItem) : [];
@@ -318,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ItemOverView.forEach(item => {
         name.innerHTML = item.name;
         description.innerHTML = item.description;
-        price.innerHTML = `$${item.price}`;
+        price.innerHTML = `$${item.price}`; 
         img.setAttribute("alt", item.name);
         img.src = item.img;
 
@@ -328,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
             div.className = `w-10 h-10 shadow-lg rounded-full`;
             div.style.backgroundColor = color;
             div.addEventListener("click", () => {
-                bgImg.style.backgroundColor = color
+                bgImg.style.backgroundColor = color  
             })
             colors.appendChild(div);
         });
@@ -340,19 +267,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <i class="fas fa-cart-shopping feature-card-button-icon"></i>
             <span>Add To Cart</span>
         `;
-        button.appendChild(Addtocart);
+        button.appendChild(Addtocart);  
     });
 });
-
-DisplayProducts('FeatureContainer', 8, true, false);
-DisplayProducts('BestSellerContainer', 8, false, true);
-
-
-
-
-
-
-
-
-
-
