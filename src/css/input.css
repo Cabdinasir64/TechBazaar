@@ -15,7 +15,7 @@
 }
 
 .feature-card {
-    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 flex-shrink-0 w-64 md:w-auto snap-center
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 flex-shrink-0 w-[260px] md:w-auto max-w-full snap-center
 }
 
 .feature-card-img-container {
@@ -110,7 +110,7 @@
     @apply bg-primary hover:bg-primary/85 text-white py-2 px-4 rounded-md cursor-pointer transition-all duration-300 font-bold text-lg 
 }
 .pageButton{
-    @apply bg-gray-200 hover:bg-gray-300 py-2 px-4 mx-[5px] rounded-md cursor-pointer font-medium transition-all duration-300
+    @apply bg-gray-200 hover:bg-gray-300 py-2 px-4 lg:mx-[5px] md:mx-[3px] mx-[2px] rounded-md cursor-pointer font-medium transition-all duration-300
 }
 .pageButton.active{
     @apply bg-primary text-white
@@ -118,6 +118,10 @@
 .filter-option.active{
     @apply bg-primary text-white transition-all duration-300 hover:bg-primary/80
 }
-
-
+.resultfound{
+    @apply list-none text-center text-red-500 mt-2
+}
+.found{
+    @apply list-none p-2 w-full bg-gray-200 cursor-pointer transition-colors duration-300 mt-2 rounded-sm text-sm hover:bg-primary hover:text-white
+}
 

@@ -14,8 +14,8 @@
 </head>
 
 <body class="font-poppins overflow-x-hidden">
-    <!-- Header Section -->
-    <header class="bg-white w-full fixed shadow-md top-0 left-0 z-50 animate__fadeInDown animate__animated">
+     <!-- Header Section -->
+     <header class="bg-white w-full fixed shadow-md top-0 left-0 z-50 animate__fadeInDown animate__animated">
         <!-- Top Banner -->
         <div class="bg-accent hidden lg:block ">
             <div class="container mx-auto px-4 md:px-8 lg:px-14 py-1 flex justify-between items-center text-center">
@@ -61,10 +61,16 @@
                     <!-- Search Bar -->
                     <div
                         class="group relative border-2 border-darkGray flex items-center px-3 py-1 rounded-md shadow-sm transition-all duration-300 w-[200px] md:w-[250px">
-                        <input type="text" placeholder="Search..."
-                            class="w-full text-sm outline-none bg-transparent text-gray-700 placeholder-gray-400">
+                        <input type="text" placeholder="Search product..."
+                            class="w-full text-sm outline-none bg-transparent text-gray-700 placeholder-gray-400" id="search" onkeyup="Search()">
                         <i
                             class="fas fa-search text-darkGray hover:text-primary transition duration-300 cursor-pointer"></i>
+                        <div class="bg-white h-48 md:w-[200px] w-[198px] absolute top-10 left-0 z-40 shadow-md rounded-sm transition-all duration-300 border-t-2 border-gray-100 searchbox" id="searchbox">
+                            <div class="p-3 max-h-[150px] w-full overflow-x-auto" id="searchResult">
+                               <h5 class="text-center mt-2 text-red-500" id="resultfound"></h5>
+                            </div>
+
+                        </div>
                     </div>
 
                     <!-- Shopping Cart -->
@@ -136,7 +142,6 @@
 
             </div>
     </header>
-
     <!-- Main Content -->
     <main class="mt-32">
         <!-- Hero Section -->

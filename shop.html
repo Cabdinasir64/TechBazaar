@@ -18,118 +18,130 @@
   <header class="bg-white w-full fixed shadow-md top-0 left-0 z-50 animate__fadeInDown animate__animated">
     <!-- Top Banner -->
     <div class="bg-accent hidden lg:block ">
-      <div class="container mx-auto px-4 md:px-8 lg:px-14 py-1 flex justify-between items-center text-center">
-        <div class="flex items-center text-gray-800 animate-pulse gap-2">
-          <div class="h-[25px] w-[25px]">
-            <img src="src/assets/deal.png" alt="Deal Icon" class="w-full h-full object-cover">
-          </div>
-          <h4 class="text-sm font-semibold">New Deals & Discounts Available!</h4>
-        </div>
-        <div class="flex items-center gap-4 text-gray-700 text-sm md:text-base">
-          <div class="flex items-center gap-2 hover:text-gray-900 transition">
-            <i class="fas fa-phone text-sm"></i>
-            <span>Call: +252 61XXXXXXX</span>
-          </div>
-          <div class="flex items-center gap-2 hover:text-gray-900 transition">
-            <i class="fas fa-truck text-sm"></i>
-            <span>Free Shipping!</span>
-          </div>
-        </div>
+        <div class="container mx-auto px-4 md:px-8 lg:px-14 py-1 flex justify-between items-center text-center">
+            <div class="flex items-center text-gray-800 animate-pulse gap-2">
+                <div class="h-[25px] w-[25px]">
+                    <img src="src/assets/deal.png" alt="Deal Icon" class="w-full h-full object-cover">
+                </div>
+                <h4 class="text-sm font-semibold">New Deals & Discounts Available!</h4>
+            </div>
+            <div class="flex items-center gap-4 text-gray-700 text-sm md:text-base">
+                <div class="flex items-center gap-2 hover:text-gray-900 transition">
+                    <i class="fas fa-phone text-sm"></i>
+                    <span>Call: +252 61XXXXXXX</span>
+                </div>
+                <div class="flex items-center gap-2 hover:text-gray-900 transition">
+                    <i class="fas fa-truck text-sm"></i>
+                    <span>Free Shipping!</span>
+                </div>
+            </div>
 
-      </div>
+        </div>
     </div>
     <!-- Navbar-->
     <div class="bg-white">
-      <div class="container mx-auto px-4 md:px-8 lg:px-14 py-4 flex justify-between items-center">
-        <!-- Logo -->
-        <div class="text-lg font-bold text-darkGray hidden md:block">
-          <a href="#" class="transition duration-300">Tech<span class="text-primary">Bazaar</span></a>
-        </div>
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="md:hidden text-primary hover:text-secondary focus:outline-none">
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
-        <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex space-x-4 font-medium">
-          <a href="index.html" class="links">Home</a>
-          <a href="shop.html" class="links">Shop</a>
-          <a href="deals.html" class="links">Deals</a>
-          <a href="contact.html" class="links">Contact</a>
-        </nav>
-        <!-- Search & Cart -->
-        <div class="flex items-center space-x-4">
-          <!-- Search Bar -->
-          <div
-            class="group relative border-2 border-darkGray flex items-center px-3 py-1 rounded-md shadow-sm transition-all duration-300 w-[200px] md:w-[250px">
-            <input type="text" placeholder="Search..."
-              class="w-full text-sm outline-none bg-transparent text-gray-700 placeholder-gray-400">
-            <i class="fas fa-search text-darkGray hover:text-primary transition duration-300 cursor-pointer"></i>
-          </div>
-
-          <!-- Shopping Cart -->
-          <a href="#" class="text-darkGray hover:text-primary transition duration-300 flex items-center relative"
-            id="OpenCart">
-            <i class="fas fa-shopping-cart text-xl"></i>
-            <!-- Cart Item Count -->
-            <div
-              class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-4 h-4  flex items-center justify-center rounded-full">
-              <span class="Count" id="Count">0</span>
-            </div>
-          </a>
-          <!-- Sidebar Cart -->
-          <div class="side_bar bg-primary h-screen md:w-[400px] w-full fixed top-0 shadow-2xl" id="side_bar">
-            <!-- Cart Header -->
-            <div
-              class="bg-primary shadow-md border-b-2 border-gray-200 p-4 flex items-center justify-between rounded-b-lg">
-              <h2 class="text-white text-xl font-semibold">Your Cart</h2>
-              <button class="text-white hover:text-gray-200 transition-colors duration-300" id="CloseCart">
-                <i class="fa fa-times"></i>
-              </button>
-            </div>
-
-            <!-- Cart Items -->
-            <div class="p-4 overflow-y-auto h-[70vh]  space-y-3" id="SideBarItems">
-
-              <h2 class="text-gray-200 text-2xl text-center notFound">Your cart is empty</h2>
-
-            </div>
-
-            <!-- Cart Footer -->
-            <div class="absolute bottom-0 w-full bg-accent p-4">
-              <div class="flex justify-between items-center mb-4">
-                <h3 class="text-primary text-lg font-semibold">Total:</h3>
-                <p class="text-primary font-semibold text-lg" id="cart-total">$0</p>
-              </div>
-              <button
-                class="w-full bg-white font-bold text-blue-600 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">
-                Checkout
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Menu (Hidden by Default) -->
-        <div id="mobile-menu" class="mobile-menu fixed inset-0 bg-white z-50 h-screen">
-          <div class="container mx-auto px-4  md:px-8 flex flex-col py-6 space-y-6">
-            <div class="flex items-center justify-between">
-              <div class="text-2xl font-bold text-darkGray ">
+        <div class="container mx-auto px-4 md:px-8 lg:px-14 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-lg font-bold text-darkGray hidden md:block">
                 <a href="#" class="transition duration-300">Tech<span class="text-primary">Bazaar</span></a>
-              </div>
-              <button id="mobile-menu-close" class="text-primary hover:text-primary/80 focus:outline-none">
-                <i class="fas fa-times text-3xl"></i>
-              </button>
             </div>
-            <nav class="flex flex-col space-y-3 font-medium px-1 mt-24 animate__fadeInLeft animate__animated">
-              <a href="index.html" class="links">Home</a>
-              <a href="shop.html" class="links">Shop</a>
-              <a href="deals.html" class="links">Deals</a>
-              <a href="contact.html" class="links">Contact</a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-primary hover:text-secondary focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex space-x-4 font-medium">
+                <a href="index.html" class="links">Home</a>
+                <a href="shop.html" class="links">Shop</a>
+                <a href="deals.html" class="links">Deals</a>
+                <a href="contact.html" class="links">Contact</a>
             </nav>
-          </div>
-        </div>
+            <!-- Search & Cart -->
+            <div class="flex items-center space-x-4">
+                <!-- Search Bar -->
+                <div
+                    class="group relative border-2 border-darkGray flex items-center px-3 py-1 rounded-md shadow-sm transition-all duration-300 w-[200px] md:w-[250px">
+                    <input type="text" placeholder="Search product..."
+                        class="w-full text-sm outline-none bg-transparent text-gray-700 placeholder-gray-400" id="search" onkeyup="Search()">
+                    <i
+                        class="fas fa-search text-darkGray hover:text-primary transition duration-300 cursor-pointer"></i>
+                    <div class="bg-white h-48 md:w-[200px] w-[198px] absolute top-10 left-0 z-40 shadow-md rounded-sm transition-all duration-300 border-t-2 border-gray-100 searchbox" id="searchbox">
+                        <div class="p-3 max-h-[150px] w-full overflow-x-auto" id="searchResult">
+                           <h5 class="text-center mt-2 text-red-500" id="resultfound"></h5>
+                        </div>
 
-      </div>
-  </header>
+                    </div>
+                </div>
+
+                <!-- Shopping Cart -->
+                <a href="#"
+                    class="text-darkGray hover:text-primary transition duration-300 flex items-center relative"
+                    id="OpenCart">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <!-- Cart Item Count -->
+                    <div
+                        class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-4 h-4  flex items-center justify-center rounded-full">
+                        <span class="Count" id="Count">0</span>
+                    </div>
+                </a>
+                <!-- Sidebar Cart -->
+                <div class="side_bar bg-primary h-screen md:w-[400px] w-full fixed top-0 shadow-2xl" id="side_bar">
+                    <!-- Cart Header -->
+                    <div
+                        class="bg-primary shadow-md border-b-2 border-gray-200 p-4 flex items-center justify-between rounded-b-lg">
+                        <h2 class="text-white text-xl font-semibold">Your Cart</h2>
+                        <button class="text-white hover:text-gray-200 transition-colors duration-300"
+                            id="CloseCart">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+
+                    <!-- Cart Items -->
+                    <div class="p-4 overflow-y-auto h-[70vh]  space-y-3" id="SideBarItems">
+
+                        <h2 class="text-gray-200 text-2xl text-center notFound">Your cart is empty</h2>
+
+                    </div>
+
+                    <!-- Cart Footer -->
+                    <div class="absolute bottom-0 w-full bg-accent p-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-primary text-lg font-semibold">Total:</h3>
+                            <p class="text-primary font-semibold text-lg" id="cart-total">$0</p>
+                        </div>
+                        <button
+                            class="w-full bg-white font-bold text-blue-600 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                            Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by Default) -->
+            <div id="mobile-menu" class="mobile-menu fixed inset-0 bg-white z-50 h-screen">
+                <div class="container mx-auto px-4  md:px-8 flex flex-col py-6 space-y-6">
+                    <div class="flex items-center justify-between">
+                        <div class="text-2xl font-bold text-darkGray ">
+                            <a href="#" class="transition duration-300">Tech<span
+                                    class="text-primary">Bazaar</span></a>
+                        </div>
+                        <button id="mobile-menu-close"
+                            class="text-primary hover:text-primary/80 focus:outline-none">
+                            <i class="fas fa-times text-3xl"></i>
+                        </button>
+                    </div>
+                    <nav
+                        class="flex flex-col space-y-3 font-medium px-1 mt-24 animate__fadeInLeft animate__animated">
+                        <a href="index.html" class="links">Home</a>
+                        <a href="shop.html" class="links">Shop</a>
+                        <a href="deals.html" class="links">Deals</a>
+                        <a href="contact.html" class="links">Contact</a>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+</header>
 
 
 
@@ -200,7 +212,7 @@
       </div>
 
       <!-- Product Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="ShopProduct">
+      <div class="flex items-center justify-center flex-col lg:grid md:grid sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="ShopProduct">
       </div>
 
       <!-- Pagination -->

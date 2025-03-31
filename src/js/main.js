@@ -273,6 +273,32 @@ const ProductView = (Item) => {
     window.location.href = "product-overview.html";
 
 }
+const Search = () => {
+    let SearchBox = document.getElementById("searchbox");
+    let SearchResult = document.getElementById("searchResult");
+    let SearchValue = document.getElementById("search").value.trim().toUpperCase();
+
+    if (SearchValue === "") {
+        SearchBox.classList.remove("active");
+        SearchResult.innerHTML = "";
+        return;
+    }
+    let FilterProduct = products.filter(item => item.name.toUpperCase().includes(SearchValue));
+    if (FilterProduct.length > 0) {
+        SearchBox.classList.add("active");
+        SearchResult.innerHTML = "";
+        FilterProduct.forEach(product => {
+            let li = document.createElement("li");
+            li.className = "found"
+            li.textContent = product.name
+            li.onclick = () => { ProductView(product) }
+            SearchResult.appendChild(li);
+        });
+    } else {
+        SearchResult.innerHTML = "<li class='resultfound'>No results found</li>";
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     LoadCart()
     const faqItems = document.querySelectorAll('.faq-item');
